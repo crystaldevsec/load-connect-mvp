@@ -32,6 +32,8 @@ _(Add screenshots here once available!)_
 
 ## 🚀 How to Run
 
+### 1. Clone the repository
+
 ```bash
 npm install
 npm start
