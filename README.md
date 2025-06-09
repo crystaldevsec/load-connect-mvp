@@ -33,7 +33,23 @@ _(Add screenshots here once available!)_
 ## 🚀 How to Run
 
 ### 1. Clone the repository
+git clone https://github.com/crystaldevsec/load-connect-mvp.git
+cd load-connect-mvp
 
-```bash
+### 2. Install dependencies
 npm install
+
+### 3. Start the app
 npm start
+
+### 4. Run on device or simulator
+📱 On your phone: Download the Expo Go app from the App Store or Google Play.
+
+Scan the QR code in Expo Dev Tools with your phone's camera or Expo Go app.
+
+💻 On your computer: You can run it on an iOS simulator or Android emulator from Expo Dev Tools.
+
+Note: Node.js and Expo CLI must be installed globally.
+Recommended Node version: v22.16.0
+To install Expo CLI:
+npm install -g expo-cli
