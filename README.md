@@ -26,7 +26,15 @@ Created as a portfolio project inspired by a real-world problem from my father�
 ---
 
 ## 📸 Screenshots
-_(Add screenshots here once available!)_
+
+### 🟦 Login Screen
+<img src="./assets/screenshots/login.png" width="300"/>
+
+### 📋 Load List Screen
+<img src="./assets/screenshots/load-list.png" width="300"/>
+
+### 📦 Load Detail Screen
+<img src="./assets/screenshots/load-detail.png" width="300"/>
 
 ---
 
