@@ -7,19 +7,16 @@ import {
   StyleSheet,
   ImageBackground,
   KeyboardAvoidingView,
-  Platform
+  Platform,
 } from 'react-native';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => navigation.navigate('LoadList'))
-      .catch(error => alert(error.message));
+    // Fake login for demo
+    navigation.navigate('LoadList');
   };
 
   return (
@@ -29,7 +26,7 @@ export default function LoginScreen({ navigation }) {
       resizeMode="cover"
     >
       <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.overlay}
       >
         <Text style={styles.title}>CIM LOGISTICS PRO</Text>
@@ -38,27 +35,23 @@ export default function LoginScreen({ navigation }) {
           style={styles.input}
           placeholder="Email"
           placeholderTextColor="#00f0ff"
-          onChangeText={setEmail}
           value={email}
-          keyboardType="email-address"
-          autoCapitalize="none"
+          onChangeText={setEmail}
         />
         <TextInput
           style={styles.input}
           placeholder="Password"
           placeholderTextColor="#00f0ff"
           secureTextEntry
-          onChangeText={setPassword}
           value={password}
+          onChangeText={setPassword}
         />
 
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Sign In</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => alert("Password reset coming soon!")}>
-          <Text style={styles.linkText}>FORGOT PASSWORD?</Text>
-        </TouchableOpacity>
+        <Text style={styles.forgot}>FORGOT PASSWORD?</Text>
       </KeyboardAvoidingView>
     </ImageBackground>
   );
@@ -71,10 +64,10 @@ const styles = StyleSheet.create({
   },
   overlay: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    alignItems: 'center',
     paddingHorizontal: 30,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
   },
   title: {
     fontSize: 30,
@@ -103,20 +96,16 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
     marginBottom: 15,
-    shadowColor: '#00f0ff',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.9,
-    shadowRadius: 10,
   },
   buttonText: {
     color: '#000',
-    fontSize: 16,
     fontWeight: 'bold',
+    fontSize: 16,
   },
-  linkText: {
+  forgot: {
     color: '#00f0ff',
     fontSize: 12,
     marginTop: 10,
     textDecorationLine: 'underline',
-  }
+  },
 });
